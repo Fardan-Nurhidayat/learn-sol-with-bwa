@@ -1,0 +1,18 @@
+{
+  "intro.sol": {
+    "__sources__": {
+      "intro.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract HelloWorld {\n    string public message = \"Hello World\";\n}",
+        "file": "intro.sol"
+      }
+    }
+  },
+  "counter.sol": {
+    "__sources__": {
+      "counter.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract Counter {\n    uint8 public angka = 0;\n\n    function increment() public {\n        angka++;\n    }\n\n    function decrement() public {\n        angka--;\n    }\n\n    function reset() public {\n        angka = 0;\n    }\n\n    function get() public view returns (uint) {\n        return angka;\n    }\n}",
+        "file": "counter.sol"
+      }
+    }
+  }
+}
