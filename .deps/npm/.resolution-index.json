@@ -14,5 +14,13 @@
         "file": "counter.sol"
       }
     }
+  },
+  "isEvenOdd.sol": {
+    "__sources__": {
+      "isEvenOdd.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract isEvenOdd {\n    address public owner;\n    constructor(){\n        owner = msg.sender;\n    }\n    function loopSum(uint8 n) public pure returns(uint8){\n        uint8 sum = 0;\n        for(uint8 i = 0 ; i <= n ; i++){\n            sum += i;\n        }\n        return sum;\n    }\n\n    modifier onlyOwner(){\n        require(msg.sender == owner , \"Must be owner\");\n        _;\n    }\n\n    function addUser() public onlyOwner{\n        // For Testing\n    }\n}",
+        "file": "isEvenOdd.sol"
+      }
+    }
   }
 }
