@@ -22,5 +22,35 @@
         "file": "isEvenOdd.sol"
       }
     }
+  },
+  "eventLogger.sol": {
+    "__sources__": {}
+  },
+  "RventLogger.sol": {
+    "__sources__": {}
+  },
+  "userRegistry.sol": {
+    "__sources__": {
+      "userRegistry.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract userRegistry {\n    struct User {\n        string name;\n        uint8 umur;\n    }\n\n    mapping(address => User) public users;\n\n    function register(string memory _name , uint8 _umur) public {\n        users[msg.sender] = User(_name , _umur);\n    }\n\n    function getUser() public view returns(string memory, uint8){\n        User memory user = users[msg.sender];\n        return(\n            user.name,\n            user.umur\n        );\n    } \n}",
+        "file": "userRegistry.sol"
+      }
+    }
+  },
+  "UserRegistry.sol": {
+    "__sources__": {
+      "UserRegistry.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract userRegistry {\n    struct User {\n        string name;\n        uint8 umur;\n    }\n\n    mapping(address => User) public users;\n\n    function register(string memory _name , uint8 _umur) public {\n        users[msg.sender] = User(_name , _umur);\n    }\n\n    function getUser() public view returns(string memory, uint8){\n        User memory user = users[msg.sender];\n        return(\n            user.name,\n            user.umur\n        );\n    } \n}",
+        "file": "UserRegistry.sol"
+      }
+    }
+  },
+  "EventLogger.sol": {
+    "__sources__": {
+      "EventLogger.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract EventLogger {\n    event NewMessage(address sender , string message);\n\n    function sendMessage(string memory _message) public {\n        emit NewMessage(msg.sender, _message);\n    }\n}",
+        "file": "EventLogger.sol"
+      }
+    }
   }
 }
