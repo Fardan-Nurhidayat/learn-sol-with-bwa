@@ -52,5 +52,21 @@
         "file": "EventLogger.sol"
       }
     }
+  },
+  "Inheritance.sol": {
+    "__sources__": {
+      "Inheritance.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract Animal {\n    function sound() public pure virtual returns(string memory){\n        return \"Sound\";\n    }\n}\n\ncontract Cat is Animal {\n    function sound() public pure override returns(string memory){\n        return \"Meow\";\n    }\n}",
+        "file": "Inheritance.sol"
+      }
+    }
+  },
+  "SimpleWallet.sol": {
+    "__sources__": {
+      "SimpleWallet.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract SimpleWallet {\n    address public owner ; \n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    function deposit() public payable{}\n\n    function getBalance() public view returns(uint){\n        return address(this).balance;\n    }\n\n    function withDraw(uint amount) public payable {\n        require(msg.sender == owner , \"Must be owner fot withdraw\");\n        (bool success , ) = payable(msg.sender).call{value : amount}(\"\");\n        require(success , \"Withdraw Failed\");\n    }\n\n}",
+        "file": "SimpleWallet.sol"
+      }
+    }
   }
 }
